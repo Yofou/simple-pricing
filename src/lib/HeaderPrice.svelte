@@ -12,8 +12,8 @@
         100: { pageviews: '1M', price: 32 },
     }
 
-    $: derivedInput = (map[$price].price * ($annual ? 0.75 : 1)).toFixed(2)
-
+    $: derivedInput = ((map[$price] ?? { price: 0 }).price * ($annual ? 0.75 : 1)).toFixed(2)
+    
     let isSmallScreen = false
     onMount(() => {
         isSmallScreen = window.innerWidth <= 640
@@ -42,7 +42,9 @@
         transform
         sm:-translate-x-3
         translate-y-[1.5em]
-    ">{map[$price].pageviews} pageviews</h1>
+    ">
+        {(map[$price] ?? {pageviews: 'calcing'}).pageviews} pageviews
+    </h1>
     
     <p class="
             justify-self-center

@@ -1,5 +1,27 @@
 <script>
     import { price } from '$lib/stores.js'
+    let temp = $price
+
+    const onChange = () => {
+        const fraction = temp / $price        
+        if (fraction <= 1.12 && fraction >= 0.84 ) {
+            if ( fraction >= 1 ) {
+                $price -= 20 - (temp - $price)
+            } else {
+                $price += 20 - ($price - temp)
+            }
+        } else {
+            const multiples = [20, 40, 60, 80, 100]
+            const difference = multiples
+                .map( value => ({ diff: value - $price, value }) )
+                .filter( ({ diff }) => diff >= 0 )
+                .reduce( (acc, curr) => acc.diff < curr.diff ? acc : curr )
+
+            $price = difference.value
+        }
+
+        temp = $price
+    }
 </script>
 
 <input 
@@ -10,11 +32,12 @@
         row-span-1
         col-span-2
     "
-    bind:value={$price} 
+    bind:value={$price}
+    on:change={onChange}
     type="range"
     min="20"
     max="100"
-    step="20"
+    step="1"
     style="--val: {(($price - 20) / 80) * 100}%"
 >
 
