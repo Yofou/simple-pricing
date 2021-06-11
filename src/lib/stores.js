@@ -9,5 +9,6 @@ function createAnnual() {
     }
 }
 
-export const price = writable(16)
+
+export const price = writable(60)
 export const annual = createAnnual()

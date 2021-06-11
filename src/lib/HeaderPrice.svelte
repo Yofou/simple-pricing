@@ -4,7 +4,15 @@
     import { price, annual } from '$lib/stores.js'
     import { onMount } from 'svelte';
 
-    $: derivedInput = `$${ ($price * ($annual ? 0.75 : 1)).toFixed(2) }`
+    const map = {
+        20: { pageviews: '10k', price: 8 },
+        40: { pageviews: '50k', price: 12 },
+        60: { pageviews: '100k', price: 16 },
+        80: { pageviews: '500k', price: 24 },
+        100: { pageviews: '1M', price: 32 },
+    }
+
+    $: derivedInput = (map[$price].price * ($annual ? 0.75 : 1)).toFixed(2)
 
     let isSmallScreen = false
     onMount(() => {
@@ -34,7 +42,7 @@
         transform
         sm:-translate-x-3
         translate-y-[1.5em]
-    ">100k pageviews</h1>
+    ">{map[$price].pageviews} pageviews</h1>
     
     <p class="
             justify-self-center
@@ -56,7 +64,7 @@
             sm:translate-y-[80%]
         "
     >
-        <span class="text-dark-desaturated text-[2.26em] font-bold align-middle tracking-tighter mr-1">{derivedInput}</span>
+        <span class="text-dark-desaturated text-[2.26em] font-bold align-middle tracking-tighter mr-1">${derivedInput}</span>
         <span class="align-baseline text-sm">/ month</span>
     </p>
 

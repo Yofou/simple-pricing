@@ -11,13 +11,14 @@
         col-span-2
     "
     bind:value={$price} 
-    type="range" 
-    min="1" 
-    max="32"
+    type="range"
+    min="20"
+    max="100"
+    step="20"
     style="--val: {($price / 32) * 100}%"
 >
 
-<style lang="scss">
+<style>
     input[type=range] { -webkit-appearance: none;}
     
     input[type=range]::-moz-range-track {
@@ -35,18 +36,6 @@
 
     input[type=range]::-moz-range-progress {
         @apply bg-cyan-300 h-2 rounded-full;
-    }
-
-    @media (-webkit-min-device-pixel-ratio:0) {
-        .test::before {
-            position: absolute;
-            background: rgba(164.73000000000005, 243.26999999999998, 235.416, var(--tw-bg-opacity));
-            content: '';
-            width: calc(68% * (var(--val) - 1) / 32);
-            height: 0.5em;
-            border-radius: 99999px;
-            z-index: 1;
-        }
     }
 
     input[type=range]::-moz-range-thumb {

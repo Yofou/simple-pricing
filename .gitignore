@@ -2,3 +2,5 @@
 node_modules
 /.svelte-kit
 /package
+/design
+style-guide.md
