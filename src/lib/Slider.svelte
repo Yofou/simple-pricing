@@ -15,7 +15,7 @@
     min="20"
     max="100"
     step="20"
-    style="--val: {($price / 32) * 100}%"
+    style="--val: {(($price - 20) / 80) * 100}%"
 >
 
 <style>
