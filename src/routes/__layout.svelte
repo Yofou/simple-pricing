@@ -1,0 +1,9 @@
+<slot></slot>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+    
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+</style>

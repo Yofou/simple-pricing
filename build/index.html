@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Simple, traffic-based pricing</title>
+		
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-35a16fe3.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-ff0c6c71.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-39e61f35.js">
+		<link rel="modulepreload" href="/./_app/pages/index.svelte-6a688837.js">
+		<link rel="stylesheet" href="/./_app/assets/start-8077b9bf.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-804c7337.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/index.svelte-814e3d3f.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-35a16fe3.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-39e61f35.js"),
+						import("/./_app/pages/index.svelte-6a688837.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<main class="
+    grid 
+    grid-rows-[1fr,3fr]
+    grid-cols-[1fr] 
+    w-screen
+    h-screen
+    bg-blue-100 
+    font-manrope
+    bg-background-pattern
+    bg-no-repeat
+    bg-contain
+    tablet:bg-auto
+ svelte-10j63nw"><header class="grid place-self-center h-[150px] bg-header-pattern bg-no-repeat bg-center svelte-1h20ams"><h1 class="
+        place-self-center 
+        transform 
+        translate-y-5 
+        font-extrabold
+        text-2xl
+        sm:text-3xl 
+        text-center
+        text-dark-desaturated
+    ">Simple, traffic-based pricing</h1>
+    <p class="
+        w-[22ch]
+        sm:w-auto
+        justify-self-center
+        text-grey-blue
+        transform
+        translate-y-3
+        text-center
+    ">Sign-up for our 30-day trial. No credit card required.</p>
+</header>
+
+    <section class="
+        grid 
+        grid-rows-[1.5fr,1fr]
+        sm:grid-rows-[2fr,1fr] 
+        justify-self-center 
+        w-[350px]
+        sm:w-[550px]
+        h-[550px] 
+        sm:h-[400px]
+        bg-[white] 
+        rounded-xl 
+        shadow-xl
+        divide-y
+        divide-light-blue-100
+    "><div class="
+        grid 
+        grid-cols-2
+        grid-rows-4
+        sm:grid-rows-3
+    "><h1 class="
+        place-self-center
+        col-start-1
+        col-end-4
+        sm:col-end-2
+        uppercase
+        text-grey-blue
+        text-sm
+        font-extrabold
+        tracking-widest
+        transform
+        sm:-translate-x-3
+        translate-y-[1.5em]
+    ">100k pageviews</h1>
+    
+    <p class="
+            justify-self-center
+            sm:justify-self-end
+            col-start-1
+            sm:col-start-2
+            col-end-5
+            sm:col-end-4
+            row-start-3
+            sm:row-start-1
+            row-end-4
+            sm:row-end-2
+            select-none
+            self-center
+            text-lg
+            text-grey-blue
+            sm:transform 
+            sm:-translate-x-1/4
+            sm:translate-y-[80%]
+        "><span class="text-dark-desaturated text-[2.26em] font-bold align-middle tracking-tighter mr-1">$16.00</span>
+        <span class="align-baseline text-sm">/ month</span></p>
+
+    <input class="
+        w-[80%]
+        place-self-center
+        input-theme
+        row-span-1
+        col-span-2
+     svelte-1wxn5qo" type="range" min="1" max="32" style="--val: 50%" value="16">
+    
+    <div class="
+            grid
+            col-span-2
+            row-span-3
+            place-self-center 
+            grid-flow-col 
+            w-min 
+            text-grey-blue
+            gap-3
+            transform
+            translate-x-5
+            sm:translate-x-[15%]
+            sm:translate-y-[-75%]
+        "><p class="w-[11ch] select-none text-xs place-self-center">Monthly Billing</p>
+        <div class="relative
+        grid
+        w-[2.8em]
+        h-[1.4em]
+        rounded-full
+        bg-light-blue-300
+        cursor-pointer
+        place-self-center
+        transition">
+    <div class="absolute
+            left-1.5
+            self-center
+            w-[0.9rem]
+            h-[0.9rem]
+            bg-[white]
+            rounded-full
+            transition
+            transform
+            translate-x-5
+            translate-y-[2%]"></div></div>
+        <p class="w-[11ch] select-none text-xs place-self-center">Yearly Billing</p>
+        <div class="grid whitespace-nowrap overflow-hidden w-[4ch] sm:w-[9ch] place-self-center bg-red-pascel rounded-full p-1 sm:px-[0.1em] transform -translate-x-3"><p class="text-[0.6em] sm:text-[0.7em] text-red-100 place-self-center">25% discount</p></div></div></div>
+        <div class="grid grid-flow-row sm:grid-flow-col"><ul class="place-self-center list-marker transform translate-x-[-1.5rem]"><li class="grid grid-cols-[1fr,3fr] m-[0.7rem]"><img class="place-self-center" src="/images/icon-check.svg" alt="green icon check">
+    <p class="text-grey-blue text-xs text-center sm:text-left">Unlimited websites</p></li>
+        <li class="grid grid-cols-[1fr,3fr] m-[0.7rem]"><img class="place-self-center" src="/images/icon-check.svg" alt="green icon check">
+    <p class="text-grey-blue text-xs text-center sm:text-left">100% data ownership</p></li>
+        <li class="grid grid-cols-[1fr,3fr] m-[0.7rem]"><img class="place-self-center" src="/images/icon-check.svg" alt="green icon check">
+    <p class="text-grey-blue text-xs text-center sm:text-left">Email reports</p></li></ul>
+
+    <button class="
+        place-self-center
+        text-blue-300
+        text-sm
+        sm:text-xs
+        bg-dark-desaturated
+        w-[12rem]
+        sm:w-[11rem]
+        h-[3rem]
+        sm:h-[2.5rem]
+        rounded-full
+        hover:text-[white]
+        transition
+        mb-2
+        sm:mb-0
+    ">Start my trial</button></div></section>
+
+</main>
+
+
+
+	
+</div>
+	</body>
+</html>
