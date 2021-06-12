@@ -13,8 +13,7 @@
         } else {
             const multiples = [20, 40, 60, 80, 100]
             const difference = multiples
-                .map( value => ({ diff: value - $price, value }) )
-                .filter( ({ diff }) => diff >= 0 )
+                .map( value => ({ diff: Math.abs(value - $price), value }) )
                 .reduce( (acc, curr) => acc.diff < curr.diff ? acc : curr )
 
             $price = difference.value
