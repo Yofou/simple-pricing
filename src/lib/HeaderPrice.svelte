@@ -11,9 +11,30 @@
         80: { pageviews: '500k', price: 24 },
         100: { pageviews: '1M', price: 32 },
     }
-
-    $: derivedInput = ((map[$price] ?? { price: 0 }).price * ($annual ? 0.75 : 1)).toFixed(2)
     
+    const ranges = [
+        { lower: 20, upper: 40 },
+        { lower: 40, upper: 60 },
+        { lower: 60, upper: 80 },
+        { lower: 80, upper: 100},
+    ]
+
+    let derivedInput = (map[$price].price * ($annual ? 0.75 : 1)).toFixed(2)
+    let key;
+    $: {
+        for ( let range of ranges ) {
+            if ($price >= range.lower && $price <= range.upper) {
+                if ( $price / ( (range.lower + range.upper) / 2 ) >= 1 ) {
+                    key = range.upper
+                } else {
+                    key = range.lower
+                }
+                derivedInput = (map[key].price * ($annual ? 0.75 : 1)).toFixed(2)
+                break
+            }
+        }
+    }
+
     let isSmallScreen = false
     onMount(() => {
         isSmallScreen = window.innerWidth <= 640
@@ -43,7 +64,7 @@
         sm:-translate-x-3
         translate-y-[1.5em]
     ">
-        {(map[$price] ?? {pageviews: 'calcing'}).pageviews} pageviews
+        {map[key].pageviews} pageviews
     </h1>
     
     <p class="

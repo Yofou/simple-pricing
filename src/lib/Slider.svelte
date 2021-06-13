@@ -1,5 +1,6 @@
 <script>
     import { price } from '$lib/stores.js'
+    
     let temp = $price
 
     const onChange = () => {

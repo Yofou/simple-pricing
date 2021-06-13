@@ -31,7 +31,6 @@
             rounded-full
             transition
             transform
-            translate-x-5
             translate-y-[2%]
         "
         class:translate-x-5={annual}
