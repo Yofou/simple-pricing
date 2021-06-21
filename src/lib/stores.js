@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store'
+import { tweened } from 'svelte/motion'
 
 function createAnnual() {
     const { subscribe, update } = writable(false)
@@ -10,5 +11,5 @@ function createAnnual() {
 }
 
 
-export const price = writable(60)
+export const price = tweened(60, { duration: 25 })
 export const annual = createAnnual()
